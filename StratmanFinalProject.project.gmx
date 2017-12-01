@@ -5,7 +5,9 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sprGrass</sprite>
+  </sprites>
   <backgrounds name="background">
     <background>background\bgField</background>
     <background>background\bgCastle</background>
@@ -21,6 +23,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\objPlayer</object>
+    <object>objects\objGrass</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmCastle</room>
