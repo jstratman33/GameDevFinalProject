@@ -21,7 +21,7 @@ if (keyRight && canGoRight)
     hspeed = mySpeed;
     facing = RIGHT;
     action = RUN;
-    myAim = 180;
+    myAim = 0;
 }
 
 if (keyJump && isOnGround)

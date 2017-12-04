@@ -7,6 +7,10 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprGrass</sprite>
+    <sprite>sprites\sprDarkGrass</sprite>
+    <sprite>sprites\sprPlayerKick</sprite>
+    <sprite>sprites\sprEnemyKick</sprite>
+    <sprite>sprites\sprBlock</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgField</background>
@@ -22,15 +26,18 @@
     <script>scripts\scrGroundControls.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\objPlayer</object>
+    <object>objects\objBlock</object>
     <object>objects\objGrass</object>
+    <object>objects\objDarkGrass</object>
+    <object>objects\objPlayer</object>
+    <object>objects\objEnemy</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rmCastle</room>
     <room>rooms\rmField</room>
+    <room>rooms\rmCastle</room>
   </rooms>
   <constants number="11">
-    <constant name="MAXGRAVITY">16</constant>
+    <constant name="MAXGRAVITY">32</constant>
     <constant name="IDLE">0</constant>
     <constant name="RUN">1</constant>
     <constant name="INAIR">2</constant>
