@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>myIdle = sprPlayerKick;
 myRun = sprPlayerKick;
-myInAir = sprPlayerKick;
+myInAir = sprPlayerJump;
 myDamage = sprPlayerKick;
 myPunch = sprPlayerKick;
 myKick = sprPlayerKick;

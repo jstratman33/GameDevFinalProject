@@ -8,9 +8,11 @@
   <sprites name="sprites">
     <sprite>sprites\sprGrass</sprite>
     <sprite>sprites\sprDarkGrass</sprite>
+    <sprite>sprites\sprBlock</sprite>
     <sprite>sprites\sprPlayerKick</sprite>
     <sprite>sprites\sprEnemyKick</sprite>
-    <sprite>sprites\sprBlock</sprite>
+    <sprite>sprites\sprEnemyJump</sprite>
+    <sprite>sprites\sprPlayerJump</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgField</background>

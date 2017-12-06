@@ -8,18 +8,18 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>152</bbox_right>
+  <bbox_right>165</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>199</bbox_bottom>
+  <bbox_bottom>169</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>153</width>
-  <height>200</height>
+  <width>166</width>
+  <height>170</height>
   <frames>
-    <frame index="0">images\sprEnemyKick_0.png</frame>
+    <frame index="0">images\sprPlayerJump_0.png</frame>
   </frames>
 </sprite>
