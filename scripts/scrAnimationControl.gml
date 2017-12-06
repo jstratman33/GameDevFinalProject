@@ -6,7 +6,7 @@ switch (action)
         break;
     case RUN :
         sprite_index = myRun;
-        image_speed = 0.5;
+        image_speed = 0.1;
         break;
     case INAIR :
         sprite_index = myInAir;

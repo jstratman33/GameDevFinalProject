@@ -9,10 +9,20 @@
     <sprite>sprites\sprGrass</sprite>
     <sprite>sprites\sprDarkGrass</sprite>
     <sprite>sprites\sprBlock</sprite>
+    <sprite>sprites\sprPlayerBlock</sprite>
     <sprite>sprites\sprPlayerKick</sprite>
+    <sprite>sprites\sprPlayerJump</sprite>
+    <sprite>sprites\sprPlayerPunch</sprite>
+    <sprite>sprites\sprPlayerRun</sprite>
+    <sprite>sprites\sprPlayerSpecial</sprite>
+    <sprite>sprites\sprPlayerStand</sprite>
+    <sprite>sprites\sprEnemyBlock</sprite>
     <sprite>sprites\sprEnemyKick</sprite>
     <sprite>sprites\sprEnemyJump</sprite>
-    <sprite>sprites\sprPlayerJump</sprite>
+    <sprite>sprites\sprEnemyPunch</sprite>
+    <sprite>sprites\sprEnemyRun</sprite>
+    <sprite>sprites\sprEnemySpecial</sprite>
+    <sprite>sprites\sprEnemyStand</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgField</background>
@@ -26,6 +36,7 @@
     <script>scripts\scrKeyboardInput.gml</script>
     <script>scripts\scrAirControls.gml</script>
     <script>scripts\scrGroundControls.gml</script>
+    <script>scripts\scrEnemyMovement.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objBlock</object>
@@ -39,7 +50,7 @@
     <room>rooms\rmCastle</room>
   </rooms>
   <constants number="11">
-    <constant name="MAXGRAVITY">32</constant>
+    <constant name="MAXGRAVITY">48</constant>
     <constant name="IDLE">0</constant>
     <constant name="RUN">1</constant>
     <constant name="INAIR">2</constant>
