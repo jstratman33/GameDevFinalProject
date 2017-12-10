@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sndBackground</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprGrass</sprite>
     <sprite>sprites\sprDarkGrass</sprite>
@@ -34,11 +36,16 @@
     <script>scripts\scrAnimationControl.gml</script>
     <script>scripts\scrCollisionForecasting.gml</script>
     <script>scripts\scrKeyboardInput.gml</script>
-    <script>scripts\scrAirControls.gml</script>
     <script>scripts\scrGroundControls.gml</script>
+    <script>scripts\scrAirControls.gml</script>
     <script>scripts\scrEnemyMovement.gml</script>
+    <script>scripts\scrDamage.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fntHealth</font>
+  </fonts>
   <objects name="objects">
+    <object>objects\objOverlord</object>
     <object>objects\objBlock</object>
     <object>objects\objGrass</object>
     <object>objects\objDarkGrass</object>
@@ -50,7 +57,7 @@
     <room>rooms\rmCastle</room>
   </rooms>
   <constants number="11">
-    <constant name="MAXGRAVITY">48</constant>
+    <constant name="MAXGRAVITY">52</constant>
     <constant name="IDLE">0</constant>
     <constant name="RUN">1</constant>
     <constant name="INAIR">2</constant>

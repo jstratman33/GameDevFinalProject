@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>myIdle = sprPlayerStand;
+            <string>health = 100;
+myIdle = sprPlayerStand;
 myRun = sprPlayerRun;
 myInAir = sprPlayerJump;
 myDamage = sprPlayerStand;
@@ -38,7 +39,35 @@ myAim = 0;
 facing = RIGHT;
 action = IDLE;
 isDamaged = false;
-canFire = true;
+canKick = true;
+canPunch = true;
+punchDamage = 1;
+kickDamage = 5;
+specialDamage = 20;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canPunch = true;
 
 </string>
           </argument>
@@ -62,7 +91,8 @@ canFire = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canFire = true;
+            <string>canKick = true;
+
 </string>
           </argument>
         </arguments>
@@ -131,14 +161,58 @@ else
         scrAirControls();
     }
     
-    if (canFire &amp;&amp; keyKick)  
+    if (action == PUNCH) {
+        alarm[1] = 15;
+        canPunch = false;
+    }
+    
+    if (action == KICK)  
     {
-        alarm[0] = 10;
-        canFire = false;
+        alarm[0] = 30;
+        canKick = false;
     }
 }
 
 scrAnimationControl();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (action == PUNCH) {
+    objEnemy.myHealth -= punchDamage;
+    with (objEnemy) 
+    { 
+        scrDamage(objPlayer.facing);
+    }
+}
+
+if (action == KICK) {
+    objEnemy.myHealth -= kickDamage;
+    with (objEnemy) 
+    { 
+        scrDamage(objPlayer.facing);
+    }
+}
+
 
 </string>
           </argument>

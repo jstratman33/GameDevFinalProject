@@ -18,6 +18,8 @@ if (!place_free(x, y+1))
 {
     isOnGround = true;
     vspeed = 0;
+    if (hspeed >= 2) { hspeed -= 2; }
+    if (hspeed <= -2) { hspeed += 2; }
     action = IDLE;
 } else {
     isOnGround = false;

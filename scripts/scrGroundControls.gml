@@ -1,9 +1,3 @@
-if (!keyLeft && !keyRight) 
-{
-    if (hspeed >= 1) { hspeed -= 1; }
-    if (hspeed <= -1) { hspeed += 1; }
-}
-
 action = IDLE;
 if (facing == LEFT) { myAim = 180; }
 if (facing == RIGHT) { myAim = 0; }
@@ -28,5 +22,17 @@ if (keyJump && isOnGround)
 {
     vspeed = -MAXGRAVITY;
     action = INAIR;
+}
+
+if (keyPunch && canPunch) {
+    action = PUNCH;
+}
+
+if (keyKick && canKick) {
+    action = KICK;
+}
+
+if (keyBlock) {
+    action = BLOCK;
 }
 

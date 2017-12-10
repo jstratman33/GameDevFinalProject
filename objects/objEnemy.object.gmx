@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>myIdle = sprEnemyStand;
+            <string>myHealth = 100;
+myIdle = sprEnemyStand;
 myRun = sprEnemyRun;
 myInAir = sprEnemyJump;
 myDamage = sprEnemyStand;
