@@ -29,7 +29,7 @@
 myIdle = sprEnemyStand;
 myRun = sprEnemyRun;
 myInAir = sprEnemyJump;
-myDamage = sprEnemyStand;
+myDamage = sprEnemyDamage;
 myPunch = sprEnemyPunch;
 myKick = sprEnemyKick;
 mySpecial = sprEnemySpecial;
@@ -39,7 +39,35 @@ myAim = 0;
 facing = RIGHT;
 action = IDLE;
 isDamaged = false;
-canFire = true;
+canPunch = true;
+canKick = true;
+punchDamage = 1;
+kickDamage = 5;
+specialDamage = 20;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canKick = true;
 
 </string>
           </argument>
@@ -63,7 +91,7 @@ canFire = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canFire = true;
+            <string>canPunch = true;
 
 </string>
           </argument>
@@ -87,7 +115,18 @@ canFire = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrCollisionForecasting();
+            <string>if (objOverlord.isPhase01 &amp;&amp; myHealth &lt;= 20) {
+    hspeed = 20;
+    facing = RIGHT;
+}
+else if (objOverlord.isPhase02 &amp;&amp; myHealth &lt;= 0) {
+    action = DAMAGE;
+    hspeed += 1;
+    vspeed -= 1;
+}
+else {
+    scrCollisionForecasting();
+}
 
 </string>
           </argument>
@@ -125,15 +164,87 @@ canFire = true;
 else 
 {
     scrEnemyMovement();
-        
-    if (canFire)  
-    {
-        alarm[0] = 10;
-        canFire = false;
+    
+    if (action == PUNCH) {
+        alarm[0] = 32;
+        canPunch = false;
+    }
+    
+    if (action == KICK)  {
+        alarm[1] = 64;
+        canKick = false;
     }
 }
 
 scrAnimationControl();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (action == PUNCH &amp;&amp; objPlayer.action != BLOCK) {
+    health -= punchDamage;
+    with (objPlayer) 
+    { 
+        scrDamage(objEnemy.facing);
+    }
+}
+
+if (action == KICK &amp;&amp; objPlayer.action != BLOCK) {
+    health -= kickDamage;
+    with (objPlayer) 
+    { 
+        scrDamage(objEnemy.facing);
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (myHealth &lt;= 0) {
+    hspeed = 0;
+    vspeed = 0;
+    action = IDLE;
+
+    objOverlord.isVictory = true;
+}
 
 </string>
           </argument>

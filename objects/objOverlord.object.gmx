@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,8 +25,49 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound_play(sndBackground);
-sound_loop(sndBackground);
+            <string>//sound_play(sndBackground);
+//sound_loop(sndBackground);
+
+isPhase01 = true;
+isPhase02 = false;
+isVictory = false;
+gameOver = false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists(objEnemy) &amp;&amp; instance_exists(objPlayer)) {
+    if (objEnemy.myHealth &lt;= 20 &amp;&amp; isPhase01) {
+        instance_create(625, 385, objFledMessage);
+    }
+    else if (objEnemy.myHealth &lt;= 0 &amp;&amp; isPhase02) {
+        instance_create(625, 385, objWinMessage);
+        gameOver = true;
+    }
+    else if (health &lt;= 0) {
+        instance_create(625, 385, objLoseMessage);
+        gameOver = true;
+    }
+}
 
 </string>
           </argument>
@@ -50,11 +91,13 @@ sound_loop(sndBackground);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_healthbar(0, 0, 200, 16, health, c_black, c_red, c_green, 0, true, true);
-draw_set_font(fntHealth);
-draw_set_color(c_white);
-draw_text(50, 5, "PLAYER HEALTH: " + string(health));
-draw_text(view_wview[0]-300, 5, "ENEMY HEALTH: " + string(objEnemy.myHealth));
+            <string>if (instance_exists(objPlayer) &amp;&amp; instance_exists(objEnemy)) {
+    //draw_healthbar(0, 0, 200, 16, health, c_black, c_red, c_green, 0, true, true);
+    draw_set_font(fntHealth);
+    draw_set_color(c_white);
+    draw_text(50, 5, "PLAYER HEALTH: " + string(health));
+    draw_text(view_wview[0]-300, 5, "ENEMY HEALTH: " + string(objEnemy.myHealth));
+}
 
 </string>
           </argument>

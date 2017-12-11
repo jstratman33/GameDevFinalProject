@@ -18,11 +18,11 @@ switch (action)
         break; 
     case PUNCH :
         sprite_index = myPunch;
-        image_speed = 0.1;
+        image_speed = 50;
         break; 
     case KICK :
         sprite_index = myKick;
-        image_speed = 0.1;
+        image_speed = 50;
         break; 
     case SPECIAL :
         sprite_index = mySpecial;

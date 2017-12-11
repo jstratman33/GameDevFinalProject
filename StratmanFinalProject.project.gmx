@@ -12,6 +12,7 @@
     <sprite>sprites\sprDarkGrass</sprite>
     <sprite>sprites\sprBlock</sprite>
     <sprite>sprites\sprPlayerBlock</sprite>
+    <sprite>sprites\sprPlayerDamage</sprite>
     <sprite>sprites\sprPlayerKick</sprite>
     <sprite>sprites\sprPlayerJump</sprite>
     <sprite>sprites\sprPlayerPunch</sprite>
@@ -19,12 +20,17 @@
     <sprite>sprites\sprPlayerSpecial</sprite>
     <sprite>sprites\sprPlayerStand</sprite>
     <sprite>sprites\sprEnemyBlock</sprite>
+    <sprite>sprites\sprEnemyDamage</sprite>
     <sprite>sprites\sprEnemyKick</sprite>
     <sprite>sprites\sprEnemyJump</sprite>
     <sprite>sprites\sprEnemyPunch</sprite>
     <sprite>sprites\sprEnemyRun</sprite>
     <sprite>sprites\sprEnemySpecial</sprite>
     <sprite>sprites\sprEnemyStand</sprite>
+    <sprite>sprites\sprFledMessage</sprite>
+    <sprite>sprites\sprWinMessage</sprite>
+    <sprite>sprites\sprLoseMessage</sprite>
+    <sprite>sprites\sprDirections</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgField</background>
@@ -51,8 +57,13 @@
     <object>objects\objDarkGrass</object>
     <object>objects\objPlayer</object>
     <object>objects\objEnemy</object>
+    <object>objects\objFledMessage</object>
+    <object>objects\objWinMessage</object>
+    <object>objects\objLoseMessage</object>
+    <object>objects\objDirections</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmTitle</room>
     <room>rooms\rmField</room>
     <room>rooms\rmCastle</room>
   </rooms>

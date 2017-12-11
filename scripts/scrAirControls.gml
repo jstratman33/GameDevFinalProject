@@ -12,4 +12,6 @@ if (keyRight && canGoRight)
     facing = RIGHT;
     myAim = 0;
 }
+    
+
 

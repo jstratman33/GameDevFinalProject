@@ -1,6 +1,6 @@
 y -= 1;
 vspeed = -MAXGRAVITY;
-hspeed = 8 * argument0;
-action = INAIR;
+hspeed = 16 * argument0;
+action = DAMAGE;
 isDamaged = true; 
 

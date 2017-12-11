@@ -29,7 +29,7 @@
 myIdle = sprPlayerStand;
 myRun = sprPlayerRun;
 myInAir = sprPlayerJump;
-myDamage = sprPlayerStand;
+myDamage = sprPlayerDamage;
 myPunch = sprPlayerPunch;
 myKick = sprPlayerKick;
 mySpecial = sprPlayerSpecial;
@@ -44,6 +44,7 @@ canPunch = true;
 punchDamage = 1;
 kickDamage = 5;
 specialDamage = 20;
+specialPower = 0;
 
 </string>
           </argument>
@@ -115,8 +116,15 @@ specialDamage = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrCollisionForecasting();
-scrKeyboardInput();
+            <string>if (health &lt;= 0) {
+    action = DAMAGE;
+    hspeed -= 1;
+    vspeed -= 1;
+}
+else {
+    scrCollisionForecasting();
+    scrKeyboardInput();
+}
 
 </string>
           </argument>
@@ -162,13 +170,13 @@ else
     }
     
     if (action == PUNCH) {
-        alarm[1] = 15;
+        alarm[1] = 8;
         canPunch = false;
     }
     
     if (action == KICK)  
     {
-        alarm[0] = 30;
+        alarm[0] = 16;
         canKick = false;
     }
 }
@@ -213,6 +221,34 @@ if (action == KICK) {
     }
 }
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (health &lt;= 0) {
+    hspeed = 0;
+    vspeed = 0;
+    action = DAMAGE;
+}
 
 </string>
           </argument>
