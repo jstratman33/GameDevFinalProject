@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//sound_play(sndBackground);
-//sound_loop(sndBackground);
+            <string>sound_stop_all();
+
+sound_play(sndBackground);
+sound_loop(sndBackground);
 
 isPhase01 = true;
 isPhase02 = false;
 isVictory = false;
 gameOver = false;
+endSoundPlayed = false;
 
 </string>
           </argument>
@@ -61,12 +64,24 @@ gameOver = false;
     }
     else if (objEnemy.myHealth &lt;= 0 &amp;&amp; isPhase02) {
         instance_create(625, 385, objWinMessage);
+        isVictory = true;
         gameOver = true;
     }
     else if (health &lt;= 0) {
         instance_create(625, 385, objLoseMessage);
         gameOver = true;
     }
+}
+
+if (gameOver &amp;&amp; !isVictory &amp;&amp; !endSoundPlayed) {
+    sound_stop(sndBackground);
+    sound_play(sndYouLose);
+    endSoundPlayed = true;
+}
+else if (gameOver &amp;&amp; isVictory &amp;&amp; !endSoundPlayed) {
+    sound_stop(sndBackground);
+    sound_play(sndYouWin);
+    endSoundPlayed = true;
 }
 
 </string>

@@ -6,6 +6,8 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\sndBackground</sound>
+    <sound>sound\sndYouLose</sound>
+    <sound>sound\sndYouWin</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprGrass</sprite>

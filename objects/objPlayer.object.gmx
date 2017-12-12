@@ -247,7 +247,6 @@ if (action == KICK) {
             <string>if (health &lt;= 0) {
     hspeed = 0;
     vspeed = 0;
-    action = DAMAGE;
 }
 
 </string>

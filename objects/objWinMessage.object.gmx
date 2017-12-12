@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rmField);
-objOverlord.isPhase01 = true;
-objOverlord.isPhase02 = false;
+            <string>game_restart();
 
 </string>
           </argument>

@@ -1,4 +1,4 @@
-if (place_free(x - mySpeed, y) && x-mySpeed > 1)
+if (place_free(x-mySpeed, y) && x-mySpeed > 1)
 {
     canGoLeft = true;
 } else {
@@ -6,7 +6,7 @@ if (place_free(x - mySpeed, y) && x-mySpeed > 1)
     hspeed = 0;
 }
 
-if (place_free(x + mySpeed, y) && x+mySpeed < room_width)
+if (place_free(x+mySpeed, y) && x+mySpeed < room_width)
 {
     canGoRight = true;
 } else {

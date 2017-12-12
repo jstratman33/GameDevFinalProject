@@ -24,7 +24,7 @@ if (targetDist > 0)
             myAim = 0;
         }
         
-        if (objPlayer.y < y-200 && isOnGround)
+        if (objPlayer.y < y-200)
         {
             vspeed = -MAXGRAVITY;
             action = INAIR;
